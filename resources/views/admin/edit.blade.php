@@ -24,8 +24,8 @@
                             <div class="flex flex-col space-y-1">
                                 <label for="absen" class="text-sm font-medium text-gray-700 dark:text-gray-300">Absen</label>
                                 <select name="absen" class="bg-gray-50 dark:bg-gray-700 border border-gray-300 text-gray-900 dark:text-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="wfh" {{ $absen->absen == 'wfh' ? 'selected' : '' }}>WFH</option>
-                                    <option value="wfo" {{ $absen->absen == 'wfo' ? 'selected' : '' }}>WFO</option>
+                                    <option value="FWA" {{ $absen->absen == 'FWA' ? 'selected' : '' }}>FWA</option>
+                                    <option value="WFO" {{ $absen->absen == 'WFO' ? 'selected' : '' }}>WFO</option>
                                 </select>
                             </div>
                             <div class="flex flex-col space-y-1">

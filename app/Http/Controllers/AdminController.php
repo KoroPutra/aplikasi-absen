@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Absen;
+use App\Models\Pengajuan;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -37,5 +38,44 @@ class AdminController extends Controller
         $absen->delete();
 
         return redirect()->route('table-admin');
+    }
+
+    public function pengajuan()
+    {
+        $pengajuan = Pengajuan::latest()->paginate(5);
+        return view('admin.table-pengajuan', compact('pengajuan'));
+    }
+
+    public function deletePengajuan($id)
+    {
+        $pengajuan = Pengajuan::find($id);
+        $pengajuan->delete();
+
+        return redirect()->route('table-pengajuan');
+    }
+
+    public function ruangchat($id)
+    {
+        $absen = Pengajuan::find($id);
+        $absen->status = 1;
+        $absen->save();
+
+        return redirect()->route('table-pengajuan');
+    }
+    public function updatePengajuan($id)
+    {
+        $absen = Pengajuan::find($id);
+        $absen->status = 2;
+        $absen->save();
+
+        return redirect()->route('table-pengajuan');
+    }
+    public function tidaksah($id)
+    {
+        $absen = Pengajuan::find($id);
+        $absen->status = 3;
+        $absen->save();
+
+        return redirect()->route('table-pengajuan');
     }
 }

@@ -32,7 +32,7 @@ new class extends Component
                 @if (auth()->user()->role == 1)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')" wire:navigate>
-                        {{ __('Dashboard') }}
+                        {{ __('Dashboard Admin') }}
                     </x-nav-link>
                 </div>
                 @elseif (auth()->user()->role == 2)
@@ -49,10 +49,20 @@ new class extends Component
                         {{ __('Tabel Absen ') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('pengajuan.index')" :active="request()->routeIs('pengajuan.index')" wire:navigate>
+                        {{ __('Form Pengajuan') }}
+                    </x-nav-link>
+                </div>
                 @elseif (auth()->user()->role == 1)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('table-admin')" :active="request()->routeIs('table-admin')" wire:navigate>
                         {{ __('Tabel Admin ') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('table-pengajuan')" :active="request()->routeIs('table-pengajuan')" wire:navigate>
+                        {{ __('Tabel Pengajuan') }}
                     </x-nav-link>
                 </div>
                 @endif

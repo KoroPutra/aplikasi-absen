@@ -21,16 +21,22 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach ($absen as $no => $absens)
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">{{ $no + 1 }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{ $absens->nama }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{ $absens->nip }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{ $absens->absen }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{ \Carbon\Carbon::parse($absens->jam)->format('d F Y') }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{ \Carbon\Carbon::parse($absens->jam)->format('H:i') }}</td>
-                            </tr>
-                            @endforeach
+                            @if ($absen->count() > 0)
+                                @foreach ($absen as $no => $absens)
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $no + 1 }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $absens->nama }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $absens->nip }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $absens->absen }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ \Carbon\Carbon::parse($absens->jam)->format('d F Y') }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ \Carbon\Carbon::parse($absens->jam)->format('H:i') }}</td>
+                                </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="6" class="px-6 py-4 whitespace-nowrap text-center text-gray-500">Tidak ada data</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

@@ -33,8 +33,8 @@
                                 <div>
                                     <label for="absen" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Jenis Absen</label>
                                     <select name="absen" id="absen" class="bg-gray-50 dark:bg-gray-800 border border-gray-300 text-gray-900 dark:text-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-                                        <option value="wfh">WFH</option>
-                                        <option value="wfo">WFO</option>
+                                        <option value="FWA">FWA</option>
+                                        <option value="WFO">WFO</option>
                                     </select>
                                 </div>
 
